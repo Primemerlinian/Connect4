@@ -95,3 +95,12 @@ boardElement.addEventListener('click', handleclick)
 resetBtnEl.addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/ 
+
+init ()
+
+function init() {
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+  turn = 1 
+  winner = null
+  resetBtnEl.setAttribute("hidden", true)
+}
