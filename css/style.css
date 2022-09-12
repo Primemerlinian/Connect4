@@ -1,0 +1,25 @@
+ html {
+  box-sizing: border-box;
+ }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  margin: 0;
+  height: 100vh;
+}
+
+section.gameboard{
+  display: grid;
+  grid-template-rows: repeat(6, 10vmin);
+  grid-template-columns: repeat(7, 10vmin);
+  border: 5px solid black;
+  grid-gap: 0vmin;
+  margin: auto;
+}
+div.circle { 
+  border: 2px solid black ;
+  
+}
