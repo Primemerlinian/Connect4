@@ -83,11 +83,15 @@ const circleEls = document.querySelectorAll('.circle')
 
 const messageEl = document.querySelector('#message')
 
-const boardElement = document.querySelector('.board')
+const boardElement = document.querySelector('.gameboard')
 
 const resetBtnEl = document.querySelector ('#reset-button')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-/*-------------------------------- Functions --------------------------------*/
+boardElement.addEventListener('click', handleclick)
+
+resetBtnEl.addEventListener('click', init)
+
+/*-------------------------------- Functions --------------------------------*/ 
