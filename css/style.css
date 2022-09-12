@@ -15,11 +15,11 @@ section.gameboard{
   display: grid;
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
-  border: 5px solid black;
+  border: 5px solid navy;
   grid-gap: 0vmin;
   margin: auto;
 }
 div.circle { 
-  border: 2px solid black ;
-  
+  border: 2px solid blue ;
+  border-radius: 50%;
 }
