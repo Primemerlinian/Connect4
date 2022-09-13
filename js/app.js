@@ -83,7 +83,7 @@ const circleEls = document.querySelectorAll('.circle')
 
 const messageEl = document.querySelector('#message')
 
-const boardElement = document.querySelector('.gameboard')
+const boardElement = document.querySelector('.board')
 
 const resetBtnEl = document.querySelector ('#reset-button')
 
@@ -102,5 +102,33 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   turn = 1 
   winner = null
-  resetBtnEl.setAttribute("hidden", true)
+  resetBtnEl.setAttribute('hidden', true)
+  render()
+}
+
+function render () {
+board.forEach((space,index) => {
+  const choice = circleEls[index]
+  if (space === null)
+  return choice.textContent = '' resetBtnEl.removeAttribute('hidden')
+  if (space === -1)
+  return choice.textcContent = 'Yellow'
+  if (space === 1)
+  return choice.textContent = 'Red'
+})
+if (turn === -1 && winner === null) {
+  return messageEl.textContent = 'Player Yellow turn!'
+}
+if (turn === -1 && winner ===null) {
+  return messageEl.textContent = 'Player Red turn!'
+}
+if (winner === 'T') {
+  return messageEl.textcontent = "It's a tie!"
+}
+if (winner === 1) {
+  return messageEl.textcontent = 'Congratulations Red won!'
+}
+if (winner === -1) {
+  return messageEl.textcontent = 'Congratulations Yellow won!'
+}
 }
