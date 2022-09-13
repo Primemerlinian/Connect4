@@ -75,7 +75,7 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let board, turn, winner
+let board, turn, p1iswinner = false, p2iswinner = false
 
 /*------------------------ Cached Element References ------------------------*/
 const circleEls = document.querySelectorAll('.circle')
@@ -100,34 +100,43 @@ init ()
 function init() {
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null]
   turn = 1 
-  winner = null
+  messageEl.textContent = ''
+
   resetBtnEl.setAttribute('hidden', true)
+  p1iswinner = false
+  p2iswinner = false
   render()
 }
 
 function render () {
-board.forEach((circle, idx) => {
-  const choice = circleEls[idx]
-  if (circle === null) {
-  return choice.textContent = '' 
-  resetBtnEl.removeAttribute('hidden')
+  board.forEach((circle, idx) => {
+    const choice = circleEls[idx]
+    if (circle === null) {
+      return choice.textContent = '' 
+      resetBtnEl.removeAttribute('hidden')
+    }
+    if (circle === -1) {
+      return choice.textContent = 'Ytoken'
+    }
+    if (circle === 1) {
+      return choice.textContent = 'Rtoken'
+    }
+  })
+  if (p1iswinner === true) {
+    messageEl.textContent = 'Rtoken wins!'
   }
-  if (circle === -1) {
-  return choice.textContent = 'Ytoken'
+  if (p2iswinner === true) {
+    messageEl.textContent = 'Ytoken wins!'
   }
-  if (circle === 1) {
-  return choice.textContent = 'Rtoken'
-  }
-})
 }
 
 function handleClick (evt) {
-let idx = evt.target.id.slice(4)
-console.log(idx);
-board[idx] = turn
-turn *= -1
-getWinner()
-render()
+  let idx = evt.target.id.slice(4)
+  console.log(idx);
+  board[idx] = turn
+  turn *= -1
+  getWinner()
+  render()
 }
 
 function getWinner (){
@@ -138,10 +147,10 @@ function getWinner (){
     console.log(sum);
     totals.push(sum)
   })
-  let p1iswinner = totals.some(x => x === 4)
+  p1iswinner = totals.some(x => x === 4)
   console.log(p1iswinner, 'p1!!!!')
 
-  let p2iswinner = totals.some(o =>  o === -4)
+  p2iswinner = totals.some(o =>  o === -4)
   console.log(p2iswinner, 'p2!!!!')
 
 }
