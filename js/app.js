@@ -124,4 +124,24 @@ board.forEach((circle, idx) => {
 function handleClick (evt) {
 let idx = evt.target.id.slice(4)
 console.log(idx);
+board[idx] = turn
+turn *= -1
+getWinner()
+render()
+}
+
+function getWinner (){
+  let totals = []
+  winningCombos.forEach(combo => {
+    console.log(combo);
+    const sum = board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]
+    console.log(sum);
+    totals.push(sum)
+  })
+  let p1iswinner = totals.some(x => x === 4)
+  console.log(p1iswinner, 'p1!!!!')
+
+  let p2iswinner = totals.some(o =>  o === -4)
+  console.log(p2iswinner, 'p2!!!!')
+
 }
