@@ -20,6 +20,6 @@ section.board{
   margin: auto;
 }
 div.circle { 
-  border: 2px solid blue ;
+  border: 1px solid blue ;
   border-radius: 50%;
 }

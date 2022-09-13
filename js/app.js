@@ -71,7 +71,6 @@ const winningCombos = [
   [12, 19, 26, 33],
   [13, 20, 27, 34],
 ]
-console.log(winningCombos)
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -90,7 +89,7 @@ const resetBtnEl = document.querySelector ('#reset-button')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-boardElement.addEventListener('click', handleclick)
+boardElement.addEventListener('click', handleClick)
 
 resetBtnEl.addEventListener('click', init)
 
@@ -107,28 +106,22 @@ function init() {
 }
 
 function render () {
-board.forEach((space,index) => {
-  const choice = circleEls[index]
-  if (space === null)
-  return choice.textContent = '' resetBtnEl.removeAttribute('hidden')
-  if (space === -1)
-  return choice.textcContent = 'Yellow'
-  if (space === 1)
-  return choice.textContent = 'Red'
+board.forEach((circle, idx) => {
+  const choice = circleEls[idx]
+  if (circle === null) {
+  return choice.textContent = '' 
+  resetBtnEl.removeAttribute('hidden')
+  }
+  if (circle === -1) {
+  return choice.textContent = 'Ytoken'
+  }
+  if (circle === 1) {
+  return choice.textContent = 'Rtoken'
+  }
 })
-if (turn === -1 && winner === null) {
-  return messageEl.textContent = 'Player Yellow turn!'
 }
-if (turn === -1 && winner ===null) {
-  return messageEl.textContent = 'Player Red turn!'
-}
-if (winner === 'T') {
-  return messageEl.textcontent = "It's a tie!"
-}
-if (winner === 1) {
-  return messageEl.textcontent = 'Congratulations Red won!'
-}
-if (winner === -1) {
-  return messageEl.textcontent = 'Congratulations Yellow won!'
-}
+
+function handleClick (evt) {
+let idx = evt.target.id.slice(4)
+console.log(idx);
 }
