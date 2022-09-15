@@ -131,9 +131,15 @@ function render () {
 }
 
 function handleClick (evt) {
-  let idx = evt.target.id.slice(4)
+  let idx = parseInt(evt.target.id.slice(4))
   console.log(idx);
-  board[idx] = turn
+  let tokenFull = 35
+  while (board[idx + tokenFull]) {
+
+  } 
+  board[idx + 35] = turn
+
+
   turn *= -1
   getWinner()
   render()
