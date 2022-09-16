@@ -123,10 +123,10 @@ function render() {
     }
   })
   if (p1iswinner === true) {
-    messageEl.textContent = 'Rtoken wins!'
+    messageEl.textContent = 'Red wins!'
   }
   if (p2iswinner === true) {
-    messageEl.textContent = 'Ytoken wins!'
+    messageEl.textContent = 'Yellow wins!'
   }
 }
 
