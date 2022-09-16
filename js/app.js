@@ -116,17 +116,17 @@ function render() {
     }
     resetBtnEl.removeAttribute('hidden')
     if (circle === -1) {
-      return choice.textContent = 'Ytoken'
+      circleEls[idx].innerText = '❤️'
     }
     if (circle === 1) {
-      return choice.textContent = 'Rtoken'
+      circleEls[idx].innerText = '💔'
     }
   })
   if (p1iswinner === true) {
-    messageEl.textContent = 'Red wins!'
+    messageEl.textContent = "Broken Heart's wins!🥺"
   }
   if (p2iswinner === true) {
-    messageEl.textContent = 'Yellow wins!'
+    messageEl.textContent = "Whole Heart's wins!🥰"
   }
 }
 
