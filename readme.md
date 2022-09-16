@@ -4,7 +4,7 @@ two-player game in which players alternately place pieces on a vertical board 7 
 
 https://mariah-lara-connect-4.netlify.app
 
-Screenshots:
 
-Technologies Used: Html, CSS, JavaScript. 
+Technologies Used: Visual Studio Code, Html, CSS, & JavaScript. 
 
+Next Steps/future enhancements: adding animation, new fonts and game styles to make it more interative.
