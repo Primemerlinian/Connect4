@@ -4,6 +4,7 @@ two-player game in which players alternately place pieces on a vertical board 7 
 
 https://mariah-lara-connect-4.netlify.app
 
+https://github.com/Primemerlinian/Connect4/issues/1#issue-1375971551
 
 Technologies Used: Visual Studio Code, Html, CSS, & JavaScript. 
 
