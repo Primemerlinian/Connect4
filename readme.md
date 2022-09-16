@@ -7,4 +7,4 @@ https://mariah-lara-connect-4.netlify.app
 
 
 ### Next Steps/future enhancements: 
-adding animation, new fonts and game styles to make it more interactive.
+Adding animation where chips or hearts will fall down, adding new fonts and style to make it more interactive. I also want to add a scoreboard and a front page that will explain the rules and then take you to the game.
