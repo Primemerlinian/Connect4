@@ -113,8 +113,8 @@ function render() {
     const choice = circleEls[idx]
     if (circle === null) {
       return choice.textContent = ''
-      resetBtnEl.removeAttribute('hidden')
     }
+    resetBtnEl.removeAttribute('hidden')
     if (circle === -1) {
       return choice.textContent = 'Ytoken'
     }
