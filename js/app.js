@@ -129,17 +129,27 @@ function render () {
     messageEl.textContent = 'Ytoken wins!'
   }
 }
+// 2 players have tokens and they each take turns dropping a token 
+// tokens can go into a blank space or they can be stacked on top of eachother
+// Once 4 tokens of the same color are horizontal, diagonal, and vertical the "color" wins
+
 
 function handleClick (evt) {
   let idx = parseInt(evt.target.id.slice(4))
-  console.log(idx);
-  let tokenFull = 35
-  while (board[idx + tokenFull]) {
-
-  } 
-  board[idx + 35] = turn
-
-
+  let tokenSpot
+  // let tokenFull = 35
+  
+  // board[idx + 35] = turn
+  for (let i = idx; i <= 42; i+=7) {
+    if (board[i] !== null) {
+      tokenSpot = i-7
+      break
+    } else {
+      tokenSpot=i
+    }
+  }
+  console.log('idx', idx, '+7', idx+7);
+  board[tokenSpot] = turn
   turn *= -1
   getWinner()
   render()
@@ -148,15 +158,10 @@ function handleClick (evt) {
 function getWinner (){
   let totals = []
   winningCombos.forEach(combo => {
-    console.log(combo);
     const sum = board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]
-    console.log(sum);
     totals.push(sum)
   })
   p1iswinner = totals.some(x => x === 4)
-  console.log(p1iswinner, 'p1!!!!')
-
   p2iswinner = totals.some(o =>  o === -4)
-  console.log(p2iswinner, 'p2!!!!')
 
 }
