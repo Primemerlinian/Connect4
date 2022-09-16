@@ -123,10 +123,10 @@ function render() {
     }
   })
   if (p1iswinner === true) {
-    messageEl.textContent = "Broken Heart's wins!🥺"
+    messageEl.textContent = "Broken Heart's win!🥺"
   }
   if (p2iswinner === true) {
-    messageEl.textContent = "Whole Heart's wins!🥰"
+    messageEl.textContent = "Whole Heart's win!🥰"
   }
 }
 

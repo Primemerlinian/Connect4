@@ -22,15 +22,14 @@ section.board{
   grid-gap: 0vmin;
   margin: auto;
   text-align: center;
-  justify-content:
 }
+
 div.circle { 
   border: 1px solid black;
   border-radius: 50%;
-  lin
 }
 
-button{
+button {
   border-radius: 8%;
   max-width: 300px;
   padding: 1%;
