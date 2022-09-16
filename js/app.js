@@ -84,7 +84,7 @@ const messageEl = document.querySelector('#message')
 
 const boardElement = document.querySelector('.board')
 
-const resetBtnEl = document.querySelector ('#reset-button')
+const resetBtnEl = document.querySelector('#reset-button')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -93,13 +93,13 @@ boardElement.addEventListener('click', handleClick)
 
 resetBtnEl.addEventListener('click', init)
 
-/*-------------------------------- Functions --------------------------------*/ 
+/*-------------------------------- Functions --------------------------------*/
 
-init ()
+init()
 
 function init() {
-  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-  turn = 1 
+  board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null]
+  turn = 1
   messageEl.textContent = ''
 
   resetBtnEl.setAttribute('hidden', true)
@@ -108,11 +108,11 @@ function init() {
   render()
 }
 
-function render () {
+function render() {
   board.forEach((circle, idx) => {
     const choice = circleEls[idx]
     if (circle === null) {
-      return choice.textContent = '' 
+      return choice.textContent = ''
       resetBtnEl.removeAttribute('hidden')
     }
     if (circle === -1) {
@@ -129,39 +129,31 @@ function render () {
     messageEl.textContent = 'Ytoken wins!'
   }
 }
-// 2 players have tokens and they each take turns dropping a token 
-// tokens can go into a blank space or they can be stacked on top of eachother
-// Once 4 tokens of the same color are horizontal, diagonal, and vertical the "color" wins
 
-
-function handleClick (evt) {
+function handleClick(evt) {
   let idx = parseInt(evt.target.id.slice(4))
   let tokenSpot
-  // let tokenFull = 35
-  
-  // board[idx + 35] = turn
-  for (let i = idx; i <= 42; i+=7) {
+  for (let i = idx; i <= 41; i += 7) {
     if (board[i] !== null) {
-      tokenSpot = i-7
+      tokenSpot = i - 7
       break
     } else {
-      tokenSpot=i
+      tokenSpot = i
     }
   }
-  console.log('idx', idx, '+7', idx+7);
   board[tokenSpot] = turn
   turn *= -1
   getWinner()
   render()
 }
 
-function getWinner (){
+function getWinner() {
   let totals = []
   winningCombos.forEach(combo => {
     const sum = board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]
     totals.push(sum)
   })
   p1iswinner = totals.some(x => x === 4)
-  p2iswinner = totals.some(o =>  o === -4)
+  p2iswinner = totals.some(o => o === -4)
 
 }
