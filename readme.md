@@ -8,4 +8,3 @@ Screenshots:
 
 Technologies Used: Html, CSS, JavaScript. 
 
-Further CSS styling
