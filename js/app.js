@@ -122,13 +122,22 @@ function render() {
       circleEls[idx].innerText = '💔'
     }
   })
+  if (turn === 1 && winner === null) {
+    return messageEl.textContent = 'Player 💔 turn!'
+  }
+  if (turn === -1 && winner === null) {
+    return messageEl.textContent = 'Player ❤️ turn!'
+  }
   if (p1iswinner === true) {
     messageEl.textContent = "Broken Heart's win!🥺"
   }
   if (p2iswinner === true) {
     messageEl.textContent = "Whole Heart's win!🥰"
+  } 
+  if (winner === 'T')
+    messageEl.textContent = "It's a Tie!"
   }
-}
+
 
 function handleClick(evt) {
   let idx = parseInt(evt.target.id.slice(4))
@@ -155,5 +164,7 @@ function getWinner() {
   })
   p1iswinner = totals.some(x => x === 4)
   p2iswinner = totals.some(o => o === -4)
+  
+  let isTie = board.some(circle => circle === null)
 
 }
