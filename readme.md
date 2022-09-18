@@ -3,7 +3,12 @@ two-player game in which players alternately place pieces on a vertical board 7 
 
 https://mariah-lara-connect-4.netlify.app
 
-<img width="481" alt="Screen Shot 2022-09-16 at 12 13 44 AM" src="https://user-images.githubusercontent.com/111215117/190886795-c939b1c0-9767-4c33-9f20-333c3ad24a27.png">
+Main Page:
+<img width="718" alt="gameplay" src="https://user-images.githubusercontent.com/111215117/190932257-de836af0-6342-4577-89b0-ade20b5957c9.png">
+
+Winner: 
+
+<img width="703" alt="winner" src="https://user-images.githubusercontent.com/111215117/190932276-2ee7a85f-349a-43cc-a86a-c1dfc7cb7daa.png">
 
 ## Connect 4 pseudocode 
 My Constants are going to be my winning combos 
