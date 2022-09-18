@@ -33,7 +33,7 @@ Add get winner function
 ### Next Steps/future enhancements: 
 Adding animation where chips or hearts will fall down, adding new fonts and style to make it more interactive. I also want to add a scoreboard and a front page that will explain the rules and then take you to the game.
 
-####Technologies Used
+#### Technologies Used
 1. Visual Studio Code 
 2. Git 
 3. Git Hub 
