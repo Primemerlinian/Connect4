@@ -29,7 +29,7 @@ div.circle {
   border-radius: 50%;
 }
 
-button {
+#reset-button {
   border-radius: 8%;
   max-width: 300px;
   padding: 1%;
@@ -38,5 +38,6 @@ button {
   border: black 3px;
   font-size: 20px;
   color: black;
+  font-family: 'Sacramento', cursive;
 }
 

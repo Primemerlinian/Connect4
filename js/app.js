@@ -1,6 +1,6 @@
 /*------------------------------- Constants ------------------------------*/
 
-const tokenSound = new Audio ("assets/audio/tokendrop.wav")
+const tokenSound = new Audio ("./assets/audio/tokendrop.wav")
 
 const winningCombos = [
   [0, 1, 2, 3],
@@ -103,7 +103,9 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null]
   turn = 1
   messageEl.textContent = ''
-
+  circleEls.forEach((circle) => {
+    circle.style.backgroundColor = ''
+  })
   resetBtnEl.setAttribute('hidden', true)
   p1iswinner = false
   p2iswinner = false
@@ -117,17 +119,22 @@ function render() {
       return choice.textContent = ''
     }
     resetBtnEl.removeAttribute('hidden')
+    resetBtnEl.style.backgroundColor = 'white'
+    resetBtnEl.style.border = 'thin solid black'
     if (circle === 1) {
       circleEls[idx].innerText = '❤️'
+      circleEls[idx].style.fontSize = 'xxx-large'
+      circleEls[idx].style.backgroundColor = 'white'
     }
     if (circle === -1) {
       circleEls[idx].innerText = '💔'
+      circleEls[idx].style.fontSize = 'xxx-large'
+      circleEls[idx].style.backgroundColor = 'black'
     }
   })
   if (!p1iswinner && turn === 1) {
     messageEl.textContent = "❤️ Turn"
-    const tokenDrop = new Audio("drodropintoken (online-audio-converter.com).wav")
-    tokenDrop.play
+    tokenSound.play()
   }
   if (!p2iswinner && turn === -1) {
     messageEl.textContent = "💔 Turn"
@@ -135,13 +142,14 @@ function render() {
   if (p1iswinner === true) {
     messageEl.textContent = 
     "Whole Heart's win!🥰"
-  }
-  if (p2iswinner === true) {
+  } 
+  else if (p2iswinner === true) {
     messageEl.textContent = "Broken Heart's win!🥺"
   } 
-// if ( === 'T') {
-//     messageEl.textContent = "It's a Tie!"
-// }
+
+  if (!board.includes(null) && !p1iswinner && !p2iswinner) {
+    messageEl.textContent = "It's a tie"
+  } 
 setTimeout(function(){
   tokenSound.play()
 })
