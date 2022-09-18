@@ -142,9 +142,11 @@ function render() {
   if (p1iswinner === true) {
     messageEl.textContent = 
     "Whole Heart's win!🥰"
+    confetti.start(22000)
   } 
   else if (p2iswinner === true) {
     messageEl.textContent = "Broken Heart's win!🥺"
+    confetti.start(22000)
   } 
 
   if (!board.includes(null) && !p1iswinner && !p2iswinner) {
