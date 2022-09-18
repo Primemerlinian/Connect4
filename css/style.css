@@ -40,4 +40,11 @@ div.circle {
   color: black;
   font-family: 'Sacramento', cursive;
 }
-
+#message {
+  font-family: 'Sacramento', cursive;
+  font-size: xx-large;
+}
+h1 {
+  font-family: 'Sacramento', cursive;
+  font-size: xxx-large;
+}
