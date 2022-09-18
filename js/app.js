@@ -115,24 +115,25 @@ function render() {
       return choice.textContent = ''
     }
     resetBtnEl.removeAttribute('hidden')
-    if (circle === -1) {
+    if (circle === 1) {
       circleEls[idx].innerText = '❤️'
     }
-    if (circle === 1) {
+    if (circle === -1) {
       circleEls[idx].innerText = '💔'
     }
   })
-  if (turn === 1 && winner === null) {
-    return messageEl.textContent = 'Player 💔 turn!'
+  if (!p1iswinner && turn === 1) {
+    messageEl.textContent = "❤️ Turn"
   }
-  if (turn === -1 && winner === null) {
-    return messageEl.textContent = 'Player ❤️ turn!'
+  if (!p2iswinner && Turn === -1) {
+    messageEl.textContent = "💔 turn"
   }
   if (p1iswinner === true) {
-    messageEl.textContent = "Broken Heart's win!🥺"
+    messageEl.textContent = 
+    "Whole Heart's win!🥰"
   }
   if (p2iswinner === true) {
-    messageEl.textContent = "Whole Heart's win!🥰"
+    messageEl.textContent = "Broken Heart's win!🥺"
   } 
   if (winner === 'T')
     messageEl.textContent = "It's a Tie!"
