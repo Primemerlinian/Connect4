@@ -1,5 +1,7 @@
 /*------------------------------- Constants ------------------------------*/
 
+const tokenSound = new Audio ("assets/audio/tokendrop.wav")
+
 const winningCombos = [
   [0, 1, 2, 3],
   [41, 40, 39, 38],
@@ -124,9 +126,11 @@ function render() {
   })
   if (!p1iswinner && turn === 1) {
     messageEl.textContent = "❤️ Turn"
+    const tokenDrop = new Audio("drodropintoken (online-audio-converter.com).wav")
+    tokenDrop.play
   }
-  if (!p2iswinner && Turn === -1) {
-    messageEl.textContent = "💔 turn"
+  if (!p2iswinner && turn === -1) {
+    messageEl.textContent = "💔 Turn"
   }
   if (p1iswinner === true) {
     messageEl.textContent = 
@@ -135,8 +139,12 @@ function render() {
   if (p2iswinner === true) {
     messageEl.textContent = "Broken Heart's win!🥺"
   } 
-  if (winner === 'T')
-    messageEl.textContent = "It's a Tie!"
+// if ( === 'T') {
+//     messageEl.textContent = "It's a Tie!"
+// }
+setTimeout(function(){
+  tokenSound.play()
+})
   }
 
 
@@ -165,7 +173,4 @@ function getWinner() {
   })
   p1iswinner = totals.some(x => x === 4)
   p2iswinner = totals.some(o => o === -4)
-  
-  let isTie = board.some(circle => circle === null)
-
 }
