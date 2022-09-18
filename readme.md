@@ -3,7 +3,7 @@ two-player game in which players alternately place pieces on a vertical board 7 
 
 https://mariah-lara-connect-4.netlify.app
 
-[Connect 4 Screenshot](screenshot/connect4screenshot.png)
+https://github.com/Primemerlinian/Connect4/issues/2#issue-1376945916
 
 ## Connect 4 pseudocode 
 My Constants are going to be my winning combos 
