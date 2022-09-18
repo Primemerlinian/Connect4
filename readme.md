@@ -3,7 +3,7 @@ two-player game in which players alternately place pieces on a vertical board 7 
 
 https://mariah-lara-connect-4.netlify.app
 
-[![Connect 4 Screenshot](screenshot/connect4screenshot.png)
+[Connect 4 Screenshot](screenshot/connect4screenshot.png)
 
 
 ### Next Steps/future enhancements: 
